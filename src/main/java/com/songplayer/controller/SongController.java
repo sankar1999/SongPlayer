@@ -16,7 +16,7 @@ public class SongController {
 
         Scanner scanner = new Scanner(System.in);
 
-        File file = new File("Songs/Sorry_Test.wav");
+        File file = new File("Songs/Justin_Bieber_Sorry.wav");
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
         Clip clip = AudioSystem.getClip();
         clip.open(audioInputStream);
