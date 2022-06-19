@@ -11,8 +11,10 @@ import java.util.Scanner;
 @RestController
 public class SongController {
 
-    @GetMapping("play")
-    public String playSong() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+    // For Song 1
+
+    @GetMapping("play/Sorry")
+    public String playSong1() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -29,16 +31,24 @@ public class SongController {
 
     }
 
-//    public SongController() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
-//        Scanner scanner = new Scanner(System.in);
-//
-//        File file = new File("Sorry_Test.wav");
-//        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-//        Clip clip = AudioSystem.getClip();
-//        clip.open(audioInputStream);
-//
-//        clip.start();
-//
-//        String response = scanner.next();
-//    }
+    // For Song 2
+
+    @GetMapping("play/Let_Me_Love_You")
+    public String playSong2() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+
+        Scanner scanner = new Scanner(System.in);
+
+        File file = new File("Songs/Let_Me_Love_You.wav");
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioInputStream);
+
+        clip.start();
+
+        String response = scanner.next();
+
+        return "Song Played Successfully...";
+    }
+
+
 }
